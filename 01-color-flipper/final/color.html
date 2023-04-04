@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change background color on button click</title>
+	<style>
+		body {
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="changeColor()">Change Color</button>
+	<script>
+		var colors = ['#ff0000', '#00ff00', '#0000ff']; // Define colors in the order you want to use them
+		var currentIndex = 0;
+		var body = document.getElementsByTagName('body')[0]; // Select the element whose background color will change
+
+		function changeColor() {
+			body.style.backgroundColor = colors[currentIndex]; // Set the background color to the current color in the array
+			currentIndex = (currentIndex + 1) % colors.length; // Increment the index and wrap around to 0 when it exceeds the length of the array
+		}
+	</script>
+</body>
+</html>
